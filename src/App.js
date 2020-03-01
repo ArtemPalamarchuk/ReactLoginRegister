@@ -1,47 +1,58 @@
 import React from 'react';
 import './App.css';
-// import RegisterButton from "./components/header/RegisterButton";
-// import LoginButton from "./components/header/LoginButton";
-// import HeaderName from "./components/header/HeaderName";
+import Form from "./components/Form";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
-            headerName: "Sign Up for Free",
-            isActiveBtn: true,
+            registerTitle: "Sign Up for Free",
+            logInTitle: "Log In",
+            headerTitle: "Sign Up for Free",
         };
-        //this.changeHeaderTitle = this.changeHeaderTitle.bind(this);
-        //this.changeHeaderTitle = this.changeHeaderTitle.bind(this);
+
+        this.loginTitleHandle = this.loginTitleHandle.bind(this);
+        this.registerTitleHandle = this.registerTitleHandle.bind(this);
     }
 
-    // changeHeaderTitle() {
-    //     this.setState((state) => {
-    //         return {headerName: "Log In"};
-    //     });
-    // }
+    loginTitleHandle(e) {
+
+        const registerButton = document.getElementById('registerButton');
+        registerButton.style.backgroundColor = 'white';
+        registerButton.style.color = 'black';
+
+        e.target.style.backgroundColor = '#5CB03A';
+        e.target.style.color = 'white';
+
+        this.setState(() => {
+            return {headerTitle: this.state.logInTitle}
+        });
+    }
+
+    registerTitleHandle(e) {
+
+        const loginBtn = document.getElementById('loginButton');
+        loginBtn.style.backgroundColor = 'white';
+        loginBtn.style.color = 'black';
+
+        e.target.style.backgroundColor = '#5CB03A';
+        e.target.style.color = 'white';
+
+        this.setState(() => {
+            return {headerTitle: this.state.registerTitle}
+        });
+    }
 
     render() {
-        //const {changeHeaderTitle} = this;
+        //console.log(this.state)
         return (
-            <div className={"form"}>
-                {/*<div className={"loginRegisterButtonsWrap"}>*/}
-                {/*    <RegisterButton/>*/}
-                {/*    <LoginButton*/}
-                {/*        // changeHeaderTitle={changeHeaderTitle}*/}
-                {/*    />*/}
-                {/*</div>*/}
-
-                {/*<HeaderName*/}
-                {/*    name={this.state.headerName}*/}
-                {/*/>*/}
-                {/*<div className={"inputsWrap"}>*/}
-
-                {/*</div>*/}
-                {/*<div className={"submitBtnWrap"}>*/}
-
-                {/*</div>*/}
-            </div>
+            <Form
+                loginTitle={this.loginTitleHandle}
+                registerTitle={this.registerTitleHandle}
+                formState={this.state.headerTitle}
+            >
+            </Form>
         )
     }
 }
