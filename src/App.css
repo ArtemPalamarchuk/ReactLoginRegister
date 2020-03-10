@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,74 +6,74 @@
     font-family: "Tahoma", serif;
 }
 
-body{
+.root {
     height: 100vh;
     width: 100vw;
-}
-
-.root{
-    height: 100%;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(#7C47B4, #21B7D6);
 }
 
-.form{
-    width: 400px;
+.form {
+    width: 350px;
+    height: 384px;
     padding: 20px;
     background-color: #292C66;
+    position: relative;
 }
 
-.loginRegisterButtonsWrap{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.loginButton, .registerButton{
+.btn {
     width: 45%;
     height: 40px;
     cursor: pointer;
-    border:none;
+    border: none;
     border-radius: 3px;
 }
 
-.registerButton{
-    background-color: #5CB03A;
-    color: white;
-}
-
-.loginButton:focus, .registerButton:focus{
+.btn:focus {
     outline: none;
 }
 
-.headerWrap{
+.activeBtn {
+    background-color: #5CB03A;
+    color: whitesmoke;
+}
+
+
+.titleWrap {
+    margin: 20px 0;
+    width: 100%;
     display: flex;
     justify-content: center;
-    padding: 30px 0;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.headerWrap {
+    display: flex;
+    justify-content: space-between;
     color: white;
 }
 
-.registerInputsWrap input{
+.loginInputsWrap input {
     width: 100%;
     padding-left: 10px;
-    height: 30px;
-    border:none;
+    height: 40px;
+    border: none;
     border-radius: 3px;
-    margin:0 0 20px 0;
+    margin: 0 0 20px 0;
     font-size: 14px;
     transition: .5s;
 }
 
-.registerInputsWrap input:focus{
+.loginInputsWrap input:focus {
     outline: none;
     border: 3px solid lightgreen;
 }
 
-.submitButton{
-    width: 100%;
+.submitButton {
+    width: 310px;
     height: 40px;
     border: none;
     cursor: pointer;
@@ -81,12 +81,14 @@ body{
     border-radius: 5px;
     color: white;
     transition: .3s;
-    margin: 20px 0;
+    position: absolute;
+    bottom: 20px;
 }
 
-.submitButton:hover{
+.submitButton:hover {
     background-color: #6cd442;
 }
-.submitButton:focus{
+
+.submitButton:focus {
     outline: none;
 }

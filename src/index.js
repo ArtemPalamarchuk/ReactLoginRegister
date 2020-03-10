@@ -5,6 +5,6 @@ import * as serviceWorker from './serviceWorker';
 
 const root = document.getElementById('root');
 
-ReactDOM.render(<App />, root);
+ReactDOM.render(<App/>, root);
 
 serviceWorker.unregister();
